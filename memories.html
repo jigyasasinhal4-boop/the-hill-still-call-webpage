@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Memories of the Hills</title>
+<link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+    <link rel="stylesheet" href="memories.css">
+</head>
+
+<body>
+
+<div class="background">
+
+    <img
+        src="images/backgrounds/home-background.jpg"
+        alt="Forest in Ranikhet"
+        id="backgroundImage"
+    >
+
+    <div class="overlay"></div>
+
+</div>
+
+<nav>
+
+    <div class="logo">
+
+        THE HILLS STILL CALL
+
+    </div>
+
+    <div class="navLinks">
+
+        <a href="home.html">Home</a>
+
+        <a href="gallery.html">Gallery</a>
+
+        <a href="memories.html">Memories</a>
+
+        <a href="hillcraft.html">HillCraft</a>
+
+    </div>
+
+</nav>
+
+<div class="container">
+
+    <section class="memoryIntro">
+
+    <h2>
+        Every memory has a place.
+    </h2>
+
+    <p>
+        Click on a glowing place to discover a story,
+        or leave one behind for someone else to find.
+    </p>
+
+</section>
+
+<div class="memoryButtons">
+
+    <button id="shareBtn">
+        Share Your Memory
+    </button>
+
+</div>
+
+<div id="mapSection">
+
+    <div id="mapContainer">
+
+        <div id="map"></div>
+
+    </div>
+
+    <div id="memoryPanel">
+
+    <img
+        id="memoryImage"
+        src="images/cards/memories.jpg"
+        alt="Memory Photograph"
+    >
+
+    <h2 id="memoryLocation">Ranikhet</h2>
+
+<h3 id="memoryTitleDisplay">The Old Wooden House</h3>
+        <p>
+
+            The smell of pine, the quiet evening, and an old wooden
+            house hidden between the trees. Some places don't ask to
+            be remembered—they simply never leave.
+
+        </p>
+
+        <button id="readMoreBtn">
+
+            Read Full Story
+
+        </button>
+
+    </div>
+
+</div>
+
+</div>
+<div id="memoryForm">
+
+    <div class="formContent">
+
+        <span id="closeForm">&times;</span>
+
+        <h2>Share Your Memory</h2>
+
+        <input
+            type="text"
+            id="memoryTitle"
+            placeholder="Memory Title">
+
+        <input
+    type="text"
+    id="memoryPlace"
+    placeholder="Click 'Pick Location' below"
+    readonly>
+
+<button id="pickLocation">
+
+    📍 Pick Location on Map
+
+</button>
+
+        <label for="memoryDate">Date of Memory</label>
+
+        <input
+            type="date"
+            id="memoryDate"
+            title="Date of Memory">
+
+        <input
+            type="text"
+            id="memoryName"
+            placeholder="Your Name (Optional)">
+
+        <textarea
+            id="memoryStory"
+            placeholder="Tell us your memory..."></textarea>
+
+        <label for="memoryPhotos">Upload Photos</label>
+
+        <input
+            type="file"
+            id="memoryPhotos"
+            title="Upload Memory Photos"
+            multiple>
+
+        <button id="submitMemory">
+
+            Submit Memory
+
+        </button>
+
+    </div>
+
+</div>
+<p id="locationHint">
+    📍 Click anywhere on the map to choose your memory location.
+</p>
+<div id="storyPopup">
+
+    <div class="storyContent">
+
+        <span id="closeStory">&times;</span>
+
+        <img
+            id="storyImage"
+            src=""
+            alt="Memory">
+
+        <h2 id="storyLocation"></h2>
+
+        <h3 id="storyTitle"></h3>
+
+        <p id="storyDate"></p>
+
+        <div id="storyText"></div>
+
+    </div>
+
+</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="data/memories-data.js"></script>
+
+<script src="memories.js"></script>
+</body>
+
+</html>

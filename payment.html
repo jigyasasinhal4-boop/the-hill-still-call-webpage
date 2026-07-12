@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Payment | The Hills Still Call</title>
+
+<link rel="stylesheet" href="payment.css">
+
+</head>
+
+<body>
+
+<div class="background">
+
+<img src="images/backgrounds/home-background.jpg" alt="Scenic hill background">
+
+<div class="overlay"></div>
+
+</div>
+
+<nav>
+
+<div class="logo">
+
+THE HILLS STILL CALL
+
+</div>
+
+<div class="navLinks">
+
+<a href="home.html">Home</a>
+<a href="gallery.html">Gallery</a>
+<a href="memories.html">Memories</a>
+<a href="hillcraft.html">HillCraft</a>
+
+</div>
+
+</nav>
+
+<div class="paymentContainer">
+
+<h1>Complete Your Pre-Order</h1>
+
+<p>
+
+Thank you for supporting the artisans of HillCraft.
+
+</p>
+<div class="paymentSteps">
+
+<div class="step completed">
+<span>✓</span>
+Pre-Order Submitted
+</div>
+
+<div class="step active">
+<span>2</span>
+Complete Payment
+</div>
+
+<div class="step">
+<span>3</span>
+Production Begins
+</div>
+
+<div class="step">
+<span>4</span>
+Order Shipped
+</div>
+
+</div>
+<div class="paymentCard">
+
+<h2>Order Summary</h2>
+
+<p>
+
+Order ID
+
+<span id="orderId">
+
+Loading...
+
+</span>
+
+</p>
+
+<p>
+
+Products
+
+<span id="productCount">
+
+0 Items
+
+</span>
+
+</p>
+
+<p>
+
+Shipping
+
+<span id="shippingCharge">
+
+₹0
+
+</span>
+
+</p>
+
+<p>
+
+Grand Total
+
+<span id="grandTotal">
+
+₹0
+
+</span>
+
+</p>
+
+<p>
+
+Amount to Pay (50%)
+
+<span id="paymentAmount">
+
+₹0
+
+</span>
+
+</p>
+
+<hr>
+
+
+<div class="paymentGateway">
+
+<p class="secureText">
+
+You will be securely redirected to complete your payment.
+
+</p>
+
+<p class="policyNotice">
+
+Please review our policies before making your payment. By checking the box below, you confirm that you have read and agree to them.
+
+</p>
+<div class="termsBox">
+
+<label>
+
+<input type="checkbox" id="acceptTerms">
+
+I have read and agree to the
+
+<a href="policies/terms.html" target="_blank">Terms & Conditions</a>,
+
+<a href="policies/privacy.html" target="_blank">Privacy Policy</a>,
+
+<a href="policies/refund.html" target="_blank">Refund & Cancellation Policy</a>
+
+and
+
+<a href="policies/shipping.html" target="_blank">Shipping Policy</a>.
+
+<a href="policies/cookies.html" target="_blank">Cookies Policy</a>
+</label>
+
+</div>
+
+<button id="payNowButton" disabled>
+
+Pay Securely
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="payment.js"></script>
+<div id="successPopup" class="successPopup">
+
+    <div class="popupCard">
+
+        <h2>🌿 Order Placed Successfully</h2>
+
+        <p>Your preorder has been saved.</p>
+
+        <p id="popupOrderId"></p>
+
+        <button id="continuePayment">
+            Continue to Payment
+        </button>
+
+    </div>
+
+</div>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "hillcraft-server",
+  "version": "1.0.0",
+  "description": "Backend for The Hills Still Call",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Jigyasa",
+  "license": "ISC",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.110.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "pdf-lib": "^1.17.1",
+    "puppeteer": "^25.3.0",
+    "razorpay": "^2.9.6",
+    "resend": "^6.17.1"
+  }
+}

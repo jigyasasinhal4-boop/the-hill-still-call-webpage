@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pre-Order | The Hills Still Call</title>
+
+<link rel="stylesheet" href="hillcraft.css">
+
+</head>
+
+<body>
+
+<div class="background">
+
+    <img src="images/backgrounds/home-background.jpg" alt="Background">
+
+    <div class="overlay"></div>
+
+</div>
+
+<nav>
+
+<div class="logo">
+THE HILLS STILL CALL
+</div>
+
+<div class="navLinks">
+
+<a href="home.html">Home</a>
+
+<a href="gallery.html">Gallery</a>
+
+<a href="memories.html">Memories</a>
+
+<a href="hillcraft.html">HillCraft</a>
+
+<a href="preorder.html">Pre-Order</a>
+
+</div>
+
+</nav>
+
+<div class="container">
+
+<h1>Your Pre-Order</h1>
+
+<p>
+Review your selected products and proceed to checkout.
+</p>
+
+<div id="productSelection">
+
+</div>
+
+<div class="cartFooter">
+
+<p>Subtotal <span id="cartSubtotal">₹0</span></p>
+
+<p>Discount <span id="cartDiscount">₹0</span></p>
+
+<p>Shipping <span id="shippingAmount">₹0</span></p>
+
+<hr>
+
+<p>Pay Today (50%) <span id="payToday">₹0</span></p>
+
+<p>Pay on Delivery <span id="remainingPayment">₹0 + Shipping</span></p>
+
+<hr>
+
+<h2>Total <span id="cartTotal">₹0</span></h2>
+
+<input
+id="couponCode"
+type="text"
+placeholder="Coupon Code">
+
+<button id="applyCoupon">
+
+Apply Coupon
+
+</button>
+
+<p id="discountMessage"></p>
+<hr>
+
+<h2>Customer Details</h2>
+
+<input
+id="customerName"
+type="text"
+placeholder="Full Name">
+
+<input
+id="customerPhone"
+type="tel"
+placeholder="Phone Number">
+
+<input
+id="customerEmail"
+type="email"
+placeholder="Email Address">
+
+<textarea
+id="customerAddress"
+placeholder="Full Address"></textarea>
+
+<input
+id="customerState"
+type="text"
+placeholder="State">
+
+<input
+id="customerCity"
+type="text"
+placeholder="City">
+
+<input
+id="customerPincode"
+type="text"
+placeholder="PIN Code">
+
+<button
+    id="checkoutButton"
+    type="button">
+    Proceed to Checkout
+</button>
+</div>
+
+</div>
+<div id="successPopup" class="hidden">
+    <div class="popupBox">
+        <h2>🎉 Order Placed Successfully!</h2>
+
+        <p>Thank you for supporting HillCraft.</p>
+
+        <p id="popupOrderId"></p>
+
+        <button id="continuePaymentBtn" 
+        onclick="window.location.href='payment.html'">
+    Continue to Payment
+</button>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="preorder.js"></script>
+
+</body>
+
+</html>
