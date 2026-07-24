@@ -1,3 +1,4 @@
+console.log("NEW PAYMENT.JSLOADED")
 const supabaseClient = window.supabase.createClient(
     "https://eimhnjoygynzeqjtwmyp.supabase.co",
     "sb_publishable_jkThzw4SJ8PxD-yQnHCbwA_Mub3qEMh"
