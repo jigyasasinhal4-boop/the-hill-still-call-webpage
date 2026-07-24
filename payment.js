@@ -200,13 +200,20 @@ submitPaymentButton.addEventListener("click", async () => {
     const orderId = sessionStorage.getItem("currentOrderId");
 
 const dbId = parseInt(orderId.replace("HILL-", ""), 10);
-const { error } = await supabaseClient
+console.log("Updating order:", dbId);
+console.log("Transaction ID:", transactionId);
+
+const { data, error } = await supabaseClient
     .from("orders")
     .update({
         transaction_id: transactionId,
         order_status: "Payment Verification Pending"
     })
-    .eq("id", dbId);
+    .eq("id", dbId)
+    .select();
+
+console.log("Updated data:", data);
+console.log("Update error:", error);
     if (error) {
 
     console.error(error);
