@@ -3,6 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const helmet = require("helmet");
 const hpp = require("hpp");
+
 const paymentRoutes = require("./routes/payment");
 const app = express();
 app.set("trust proxy",)
@@ -47,6 +48,7 @@ app.use(express.urlencoded({
     limit: "100kb"
 }));
 app.use("/payment", paymentRoutes);
+app.use(hpp());
 app.get("/", (req, res) => {
     res.send("The Hills Still Call Backend Running ❤️");
 });
