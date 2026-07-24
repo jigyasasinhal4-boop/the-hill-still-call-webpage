@@ -9,7 +9,7 @@
 <title>Payment | The Hills Still Call</title>
 
 <link rel="stylesheet" href="payment.css">
-
+<link rel="stylesheet" href="responsive/payment-responsive.css">
 </head>
 
 <body>
@@ -140,13 +140,27 @@ Amount to Pay (50%)
 <hr>
 
 
-<div class="paymentGateway">
-
 <p class="secureText">
 
-You will be securely redirected to complete your payment.
+Scan the QR code below to pay your 50% advance using any UPI app.
 
 </p>
+
+<div class="qrSection">
+
+<img
+id="upiQR"
+class="upiQR"
+alt="UPI QR Code">
+
+paytm.s1zhilr@pty
+
+</p>
+
+<button id="openUpiButton">
+    📲 Pay with UPI App
+</button>
+</div>
 
 <p class="policyNotice">
 
@@ -176,9 +190,20 @@ and
 
 </div>
 
-<button id="payNowButton" disabled>
+<label for="transactionId">
 
-Pay Securely
+UPI Transaction ID
+
+</label>
+
+<input
+id="transactionId"
+type="text"
+placeholder="Enter your UPI Transaction ID">
+
+<button id="submitPaymentButton" disabled>
+
+Submit Payment
 
 </button>
 
@@ -187,9 +212,7 @@ Pay Securely
 </div>
 
 </div>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-<script src="payment.js"></script>
+
 <div id="successPopup" class="successPopup">
 
     <div class="popupCard">
@@ -207,6 +230,11 @@ Pay Securely
     </div>
 
 </div>
+<script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="payment.js"></script>
+
 </body>
 
 </html>

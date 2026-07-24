@@ -489,3 +489,22 @@ border-color:#4CAF50;
 border-color:#d4af37;
 
 }
+.upiQR{
+
+width:220px;
+
+height:auto;
+
+display:block;
+
+margin:20px auto;
+
+padding:10px;
+
+background:white;
+
+border-radius:15px;
+
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+}

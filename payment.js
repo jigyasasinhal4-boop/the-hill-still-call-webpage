@@ -51,8 +51,25 @@ document.getElementById("shippingCharge").textContent =
 
 document.getElementById("grandTotal").textContent =
 "₹" + order["grand total value"];
+const upiLink =
+`upi://pay?pa=paytm.s1zhilr@pty&pn=The%20Hills%20Still%20Call&am=${order.payment_today}&cu=INR`;
+
+QRCode.toDataURL(upiLink, function (err, url) {
+
+    if (err) {
+
+        console.error(err);
+
+        return;
+
+    }
+
+    document.getElementById("upiQR").src = url;
+
+});
 }
 loadOrder();
+/*
 document.getElementById("payNowButton").addEventListener("click", async () => {
 
     console.log("Pay button clicked");
@@ -65,7 +82,7 @@ if (!acceptTerms.checked) {
 }
     try {
 
-        const response = await fetch("http://localhost:3000/payment/create-order", {
+        const response = await fetch("https://the-hill-still-call-webpage.onrender.com/payment/create-order", {
 
             method: "POST",
 
@@ -129,6 +146,8 @@ razorpay.open();
     }
 
 });
+*/
+/*
 const acceptTerms = document.getElementById("acceptTerms");
 const payNowButton = document.getElementById("payNowButton");
 
@@ -136,4 +155,68 @@ acceptTerms.addEventListener("change", () => {
 
     payNowButton.disabled = !acceptTerms.checked;
 
+});
+*/
+const openUpiButton = document.getElementById("openUpiButton");
+
+if (openUpiButton) {
+
+    openUpiButton.addEventListener("click", () => {
+
+        const amount =
+            document.getElementById("paymentAmount")
+            .textContent
+            .replace("₹", "")
+            .trim();
+
+        const upiLink =
+            `upi://pay?pa=paytm.s1zhilr@pty&pn=The%20Hills%20Still%20Call&am=${amount}&cu=INR`;
+
+        window.location.href = upiLink;
+
+    });
+
+}
+const acceptTerms = document.getElementById("acceptTerms");
+const submitPaymentButton = document.getElementById("submitPaymentButton");
+
+acceptTerms.addEventListener("change", () => {
+
+    submitPaymentButton.disabled = !acceptTerms.checked;
+
+});
+submitPaymentButton.addEventListener("click", async () => {
+
+    const transactionId =
+        document.getElementById("transactionId").value.trim();
+
+    if (!transactionId) {
+
+        alert("Please enter your UPI Transaction ID.");
+
+        return;
+
+    }
+    const orderId = sessionStorage.getItem("currentOrderId");
+
+const dbId = parseInt(orderId.replace("HILL-", ""), 10);
+const { error } = await supabaseClient
+    .from("orders")
+    .update({
+        transaction_id: transactionId,
+        order_status: "Payment Verification Pending"
+    })
+    .eq("id", dbId);
+    if (error) {
+
+    console.error(error);
+
+    alert("Unable to save your payment details. Please try again.");
+
+    return;
+
+}
+
+window.location.href = 
+"payment-success.html";
 });

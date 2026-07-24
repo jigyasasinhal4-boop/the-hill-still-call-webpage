@@ -18,7 +18,7 @@ id:"buransh",
 name:"Buransh Bloom Sling",
 price:600,
 quantity:0,
-weight:500
+weight:120
 },
 
 {
@@ -26,15 +26,15 @@ id:"charm",
 name:"Whispering Pines Charm",
 price:250,
 quantity:0,
-weight:100
+weight:20
 },
 
 {
 id:"journal",
 name:"Kafal Chronicles Journal",
-price:450,
+price:500,
 quantity:0,
-weight:500
+weight:200
 },
 
 {
@@ -42,7 +42,7 @@ id:"pouch",
 name:"Where Mountains Rest Pouch",
 price:500,
 quantity:0,
-weight:300
+weight:40
 }
 
 ];
@@ -236,19 +236,36 @@ const state=document.getElementById("customerState").value.trim();
 const city=document.getElementById("customerCity").value.trim();
 const pincode=document.getElementById("customerPincode").value.trim();
 let shippingType = "zone";
-
+// Local state courier rates.
+const stateStates = [
+    "UTTARAKHAND"
+];
+// States that use Zone courier rates.
+// Applies to all cities in these states unless the city is listed in metroCities.
+const zoneStates = [
+    "UTTAR PRADESH",
+    "HIMACHAL PRADESH",
+    "HARYANA",
+    "PUNJAB",
+    "RAJASTHAN",
+];
+// Cities that use Metro courier rates.
+// These cities take priority even if their state is in the Zone list.
 const metroCities = [
     "DELHI",
+    "LUCKNOW",
+    "AHMEDABAD",
     "MUMBAI",
-    "KOLKATA",
+    "NAGPUR",
+    "HYDERABAD",
+    "BENGALURU",
     "CHENNAI",
-    "HYDERABAD"
+    "KOCHI",
+    "KOLKATA"
 ];
+const customerState = state.trim().toUpperCase();
 
-const customerState = state.toUpperCase();
-
-const customerCity = city.toUpperCase();
-
+const customerCity = city.trim().toUpperCase();
 if (
     customerState === "UTTARAKHAND" ||
     customerState === "UTTAR PRADESH"
@@ -352,29 +369,7 @@ if (shippingType === "state") {
 
 }
 
-else if (shippingType === "metro") {
-
-    if (totalWeight <= 100) {
-
-        shipping = 90;
-
-    } else if (totalWeight <= 500) {
-
-        shipping = 140;
-
-    } else if (totalWeight <= 1000) {
-
-        shipping = 180;
-
-    } else {
-
-        shipping = 180 + Math.ceil((totalWeight - 1000) / 1000) * 140;
-
-    }
-
-}
-
-else {
+else if (shippingType === "zone") {
 
     if (totalWeight <= 100) {
 
@@ -391,6 +386,28 @@ else {
     } else {
 
         shipping = 160 + Math.ceil((totalWeight - 1000) / 1000) * 120;
+
+    }
+
+}
+
+else {
+
+    if (totalWeight <= 100) {
+
+        shipping = 120;
+
+    } else if (totalWeight <= 500) {
+
+        shipping = 160;
+
+    } else if (totalWeight <= 1000) {
+
+        shipping = 220;
+
+    } else {
+
+        shipping = 220 + Math.ceil((totalWeight - 1000) / 1000) * 160;
 
     }
 
@@ -458,7 +475,7 @@ if (error) {
 const orderNumber = "HILL-" + String(data.id).padStart(4, "0");
 try {
 console.log("STEP 4");
-    const response = await fetch("http://localhost:3000/payment/send-email", {
+    const response = await fetch("https://the-hill-still-call-webpage.onrender.com/payment/send-email", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -489,13 +506,15 @@ console.log("STEP 4");
 
    const result = await response.json();
 console.log("STEP 5");
+console.log("STEP 5A");
+document.getElementById("successPopup").classList.remove("hidden");
+console.log("STEP 5B");
 console.log(result);
 
 if (result.error) {
     alert(result.error.message);
 }
 
-alert("EMAIL RESPONSE RECEIVED");
 }
  catch (err) {
 
@@ -537,6 +556,6 @@ document.getElementById("customerPincode").value = "";
 
 updateTotals();
 });
-document.getElementById("continuePaymentBtn").addEventListener("click", () => {
+document.getElementById("continuePayment").addEventListener("click", () => {
     window.location.href = "payment.html";
 });

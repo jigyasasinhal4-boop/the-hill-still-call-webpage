@@ -1,11 +1,19 @@
 const Razorpay = require("razorpay");
-
+const { validationResult } = require("express-validator");
 const razorpay = new Razorpay({
     key_id: process.env.RAZORPAY_KEY_ID,
     key_secret: process.env.RAZORPAY_KEY_SECRET
 });
 
 async function createOrder(req, res) {
+
+    const errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+        return res.status(400).json({
+            errors: errors.array()
+        });
+    }
 
     try {
 

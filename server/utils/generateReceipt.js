@@ -38,14 +38,14 @@ html = html.replace(
     html = html.replace(/{{products}}/g, order.products);
 
     const browser = await puppeteer.launch({
-        headless: true
+        headless: false
     });
 
     const page = await browser.newPage();
 
     await page.setContent(html, {
-        waitUntil: "networkidle0"
-    });
+    waitUntil: "domcontentloaded"
+});
 
 
 

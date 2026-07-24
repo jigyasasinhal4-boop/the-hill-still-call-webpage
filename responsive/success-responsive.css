@@ -1,0 +1,100 @@
+/* ===========================
+   TABLET
+=========================== */
+
+@media (max-width:1024px){
+
+.successCard{
+    max-width:600px;
+    padding:40px;
+}
+
+.successCard h1{
+    font-size:36px;
+}
+
+.successIcon{
+    font-size:60px;
+}
+
+}
+
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width:768px){
+
+body{
+    padding:15px;
+}
+
+.successCard{
+    padding:30px 20px;
+}
+
+.successIcon{
+    font-size:55px;
+}
+
+.successCard h1{
+    font-size:2rem;
+}
+
+.successCard p{
+    font-size:1rem;
+    line-height:1.7;
+}
+
+.orderInfo{
+    padding:20px;
+}
+
+.orderInfo h2{
+    font-size:1.5rem;
+    word-break:break-word;
+}
+
+.buttonGroup{
+    flex-direction:column;
+    align-items:center;
+}
+
+.primaryButton,
+.secondaryButton{
+    width:100%;
+    max-width:320px;
+    text-align:center;
+}
+
+}
+
+
+/* ===========================
+   SMALL PHONES
+=========================== */
+
+@media (max-width:480px){
+
+.successCard{
+    padding:25px 18px;
+}
+
+.successIcon{
+    font-size:48px;
+}
+
+.successCard h1{
+    font-size:1.7rem;
+}
+
+.successCard p{
+    font-size:.95rem;
+}
+
+.orderInfo h2{
+    font-size:1.3rem;
+}
+
+}

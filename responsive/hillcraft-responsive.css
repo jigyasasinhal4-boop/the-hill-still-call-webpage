@@ -1,0 +1,271 @@
+/* ===========================
+   TABLET
+=========================== */
+
+@media (max-width:1024px){
+
+nav{
+    padding:20px 30px;
+}
+
+.logo{
+    font-size:24px;
+}
+
+.navLinks{
+    gap:20px;
+}
+
+.hero h1{
+    font-size:4rem;
+}
+
+.hero p{
+    font-size:1.1rem;
+}
+
+.ourStory,
+.limitedCollection{
+    flex-direction:column;
+    gap:40px;
+}
+
+.productGrid{
+    grid-template-columns:1fr 1fr;
+}
+
+.peopleCategories{
+    grid-template-columns:1fr 1fr;
+}
+
+.peopleIntro,
+.campaignIntro{
+    width:90%;
+}
+
+.finalScene h2{
+    font-size:42px;
+}
+
+}
+
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width:768px){
+
+body{
+    overflow-x:hidden;
+}
+
+nav{
+    position:relative;
+    flex-direction:column;
+    gap:15px;
+    padding:20px;
+}
+
+.logo{
+    font-size:2rem;
+    text-align:center;
+    line-height:1.2;
+    letter-spacing:2px;
+}
+.navLinks{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:15px;
+    width:100%;
+}
+.navLinks a{
+    font-size:1rem;
+}
+.hero{
+    padding:90px 20px  60px;
+    min-height:auto;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:2.5rem;
+    letter-spacing:2px;
+    line-height:1.1;
+}
+
+.hero p{
+    font-size:1rem;
+}
+
+#exploreCollection,
+#beginPreOrder,
+#returnHome,
+.limitedText button,
+.productCard button,
+.connectButton{
+    width:100%;
+    max-width:320px;
+}
+
+.ourStory,
+.limitedCollection{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    margin:70px auto;
+    gap:30px;
+}
+.storyImage img,
+.limitedImage img{
+    width:100%;
+    max-width:320px;
+    border-radius:24px;
+}
+.storyText{
+    width:100%;
+}
+.storyText p{
+    max-width:340px;
+    margin:auto;
+}
+.journeyTimeline{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+.productCard{
+    max-width:320px;
+    margin:auto;
+}
+.productCard img{
+    width:100%;
+    height:auto;
+}
+impactCards{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+
+}
+.storyText h2,
+.journey h2,
+.impact h2,
+.connect h2,
+.peopleSection h2,
+.featuredCollection h2,
+.finalMessage h2{
+    font-size:2rem;
+}
+
+.storyText p,
+.collectionIntro,
+.impactIntro,
+.connect p,
+.finalMessage p{
+    font-size:1rem;
+    line-height:1.8;
+}
+
+.productGrid{
+    grid-template-columns:1fr;
+}
+
+.peopleCategories{
+    grid-template-columns:1fr;
+}
+
+.teamGrid{
+    grid-template-columns:1fr;
+}
+
+.artisanGrid{
+    grid-template-columns:1fr;
+}
+
+.leadershipGrid{
+    flex-direction:column;
+}
+
+.leaderCard{
+    max-width:100%;
+}
+
+.peoplePopupContent{
+    width:95%;
+    padding:20px;
+}
+
+.finalScene{
+    padding:80px 20px;
+}
+
+.finalScene h2{
+    font-size:2rem;
+}
+
+.finalScene p{
+    font-size:1rem;
+}
+
+.footerContent h2{
+    font-size:1.8rem;
+}
+
+.footerLinks,
+.footerPolicies,
+.connectButtons,
+.legalLinks{
+    gap:15px;
+}
+.finalMessage{
+    text-align:center;
+}
+.finalMessage p{
+    max-width:340px;
+    margin:auto;
+}
+
+}
+
+
+/* ===========================
+   SMALL PHONES
+=========================== */
+
+@media (max-width:480px){
+
+.hero h1{
+    font-size:2.1rem;
+}
+
+.hero p{
+    font-size:.95rem;
+}
+
+.storyText h2,
+.journey h2,
+.featuredCollection h2,
+.peopleSection h2,
+.impact h2,
+.connect h2,
+.finalMessage h2{
+    font-size:1.8rem;
+}
+
+.finalScene h2{
+    font-size:1.7rem;
+}
+
+.endingQuote{
+    font-size:1.3rem;
+}
+
+.endingText{
+    font-size:.95rem;
+}
+
+}

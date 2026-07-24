@@ -1,11 +1,17 @@
-const { generateReceipt } = require("../utils/generateReceipt");
 const { Resend } = require("resend");
 const resend = new Resend(process.env.RESEND_API_KEY);
-
+const { validationResult } = require("express-validator");
 async function sendConfirmationEmail(req, res) {
 
     try {
+    const errors = validationResult(req);
 
+if (!errors.isEmpty()) {
+    return res.status(400).json({
+        success: false,
+        errors: errors.array()
+    });
+}
        const {
     email,
     customerName,
@@ -18,6 +24,7 @@ async function sendConfirmationEmail(req, res) {
     paymentToday,
     remainingPayment,
     address,
+    city,
     state,
     pincode
 } = req.body;
@@ -30,27 +37,6 @@ const productsHTML = orderedProducts.map(product => `
 </tr>
 `).join("");
 
-const receiptPDF = await generateReceipt({
-    customerName,
-    orderId,
-    orderDate: new Date().toLocaleDateString("en-IN"),
-    orderStatus: "Order Received",
-
-    subtotal,
-    discount,
-    shipping,
-    total,
-
-    paymentToday,
-    remainingPayment,
-
-    address,
-    state,
-    city,
-    pincode,
-
-    products: productsHTML
-});
 const fs = require("fs");
 
 fs.writeFileSync("receipt.pdf", receiptPDF);
@@ -63,11 +49,10 @@ ${product.name} × ${product.quantity}
 `).join("");
         const data = await resend.emails.send({
 
-            from: "HillCraft <onboarding@resend.dev>",
-
+           from: "The Hill Still Call <orders@the-hill-still-call.site>",
             to: email,
 
-            subject: "Your HillCraft Order is Confirmed 🌿",
+            subject: `Order Confirmation • ${orderId} • The Hill Still Call`,
 
             html: `
             
@@ -121,7 +106,7 @@ ${city}, ${state} - ${pincode}
 
 <div style="text-align:center;margin-top:25px;">
 
-<a href="https://thehillsstillcall.com/tracking.html"
+<a href="https://the-hill-still-call.info"
 style="background:#6B3F1D;color:white;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:bold;">
 Track Your Order
 </a>
@@ -132,19 +117,32 @@ Track Your Order
 Keep your <b>Order ID (${orderId})</b> safe. You'll need it to track your handcrafted order.
 </p>
 
+<hr style="margin-top:40px;">
+
+<h3 style="text-align:center;color:#6B3F1D;">
+Need Help?
+</h3>
+
+<p style="text-align:center;">
+If you have any questions about your order, simply reply to this email or contact our support team.
+</p>
+
+<div style="text-align:center;margin-top:20px;">
+
+<a href="https://the-hill-still-call.info"
+style="background:#6B3F1D;color:white;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:bold;">
+Visit Support Centre
+</a>
+
+</div>
+
 <p style="text-align:center;margin-top:40px;">
-❤️ Thank you for supporting HillCraft.
+❤️ Thank you for supporting the artisans of Uttarakhand.
 </p>
 
 </div>
-`,
+`
 
-attachments: [
-{
-    filename: `HillCraft-Receipt-${orderId}.pdf`,
-    content: receiptPDF.toString("base64")
-}
-]
 
 });
 console.log("RESEND FINISHED");

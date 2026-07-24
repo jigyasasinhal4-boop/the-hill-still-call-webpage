@@ -1,0 +1,145 @@
+/* ===========================
+   TABLET
+=========================== */
+
+@media (max-width:1024px){
+
+nav{
+    padding:20px 30px;
+}
+
+.logo{
+    font-size:22px;
+}
+
+.navLinks{
+    gap:20px;
+}
+
+.paymentContainer{
+    width:94%;
+    margin:120px auto 50px;
+}
+
+.paymentCard{
+    padding:30px;
+}
+
+.paymentContainer h1{
+    font-size:2.5rem;
+}
+
+.paymentSteps{
+    justify-content:center;
+}
+
+.step{
+    min-width:180px;
+}
+
+}
+
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width:768px){
+
+body{
+    overflow-x:hidden;
+}
+
+nav{
+    position:relative;
+    flex-direction:column;
+    gap:15px;
+    padding:20px;
+}
+
+.navLinks{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+}
+
+.paymentContainer{
+    width:94%;
+    margin:40px auto;
+}
+
+.paymentContainer h1{
+    font-size:2rem;
+    letter-spacing:3px;
+}
+
+.paymentContainer>p{
+    margin:15px 0 35px;
+}
+
+.paymentCard{
+    padding:22px;
+}
+
+.paymentCard p{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:6px;
+}
+
+.paymentSteps{
+    flex-direction:column;
+}
+
+.step{
+    width:100%;
+    min-width:unset;
+}
+
+.upiQR{
+    width:180px;
+}
+
+.termsBox{
+    font-size:14px;
+    padding:15px;
+}
+
+#payNowButton,
+#submitPaymentButton,
+#openUpiButton{
+    width:100%;
+    font-size:16px;
+}
+
+.popupCard{
+    width:92%;
+    padding:25px;
+}
+
+}
+
+
+/* ===========================
+   SMALL PHONES
+=========================== */
+
+@media (max-width:480px){
+
+.paymentContainer h1{
+    font-size:1.7rem;
+}
+
+.paymentCard{
+    padding:18px;
+}
+
+.upiQR{
+    width:160px;
+}
+
+.logo{
+    font-size:18px;
+}
+
+}

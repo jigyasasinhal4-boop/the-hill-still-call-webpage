@@ -1,0 +1,175 @@
+/* ===========================
+   TABLET
+=========================== */
+
+@media (max-width:1024px){
+
+nav{
+    padding:20px 30px;
+}
+
+.logo{
+    font-size:24px;
+}
+
+.navLinks{
+    gap:20px;
+}
+
+.container h1{
+    font-size:3rem;
+    letter-spacing:5px;
+}
+
+.memoryIntro p{
+    width:90%;
+}
+
+#mapSection{
+    flex-direction:column;
+}
+
+#memoryPanel{
+    width:100%;
+}
+
+}
+
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width:768px){
+
+body{
+    overflow-x:hidden;
+}
+
+nav{
+    position:relative;
+    flex-direction:column;
+    gap:15px;
+    padding:20px;
+}
+
+.navLinks{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+}
+
+.container{
+    width:94%;
+    margin:30px auto;
+}
+
+.container h1{
+    font-size:2.2rem;
+    letter-spacing:3px;
+}
+
+.container p{
+    font-size:1rem;
+}
+
+.memoryIntro h2{
+    font-size:1.8rem;
+}
+
+.memoryIntro p{
+    width:100%;
+    font-size:1rem;
+}
+
+#mapSection{
+    flex-direction:column;
+    gap:25px;
+}
+
+#mapContainer{
+    height:50vh;
+}
+
+#memoryPanel{
+    width:100%;
+    padding:20px;
+}
+
+.memoryButtons{
+    flex-direction:column;
+    align-items:center;
+}
+
+.memoryButtons button,
+#shareBtn,
+#readMoreBtn,
+#pickLocation,
+#submitMemory{
+    width:100%;
+    max-width:320px;
+}
+
+.formContent{
+    padding:25px;
+}
+
+.storyContent{
+    padding:25px;
+}
+
+#storyImage{
+    height:220px;
+}
+
+#storyTitle{
+    font-size:1.6rem;
+}
+
+#storyText{
+    font-size:1rem;
+    line-height:1.8;
+}
+
+}
+
+
+/* ===========================
+   SMALL PHONES
+=========================== */
+
+@media (max-width:480px){
+
+.container h1{
+    font-size:1.9rem;
+}
+
+.memoryIntro h2{
+    font-size:1.5rem;
+}
+
+#mapContainer{
+    height:40vh;
+}
+
+#memoryImage{
+    height:180px;
+}
+
+.formContent{
+    padding:20px;
+}
+
+.storyContent{
+    padding:20px;
+}
+
+#storyImage{
+    height:180px;
+}
+
+#storyTitle{
+    font-size:1.4rem;
+}
+
+}

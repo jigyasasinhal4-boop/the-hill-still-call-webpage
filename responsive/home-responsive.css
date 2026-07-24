@@ -1,0 +1,120 @@
+/* ===========================
+   TABLET
+=========================== */
+
+@media (max-width:1024px){
+
+.container{
+    width:94%;
+    margin:60px auto;
+}
+
+#title{
+    font-size:4rem;
+    letter-spacing:8px;
+}
+
+#motto{
+    font-size:1.2rem;
+}
+
+.cards{
+    gap:20px;
+}
+
+.card{
+    width:280px;
+    height:390px;
+}
+
+.memories{
+    width:340px;
+}
+
+}
+
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width:768px){
+
+.container{
+    width:92%;
+    margin:40px auto;
+}
+
+#title{
+    font-size:2.8rem;
+    letter-spacing:4px;
+    line-height:1.2;
+}
+
+#motto{
+    font-size:1rem;
+    margin-top:15px;
+    line-height:1.6;
+}
+
+#divider{
+    width:120px;
+    margin:30px auto;
+}
+
+.cards{
+    flex-direction:column;
+    gap:25px;
+    margin-top:40px;
+}
+
+.card,
+.memories{
+    width:100%;
+    max-width:360px;
+    height:420px;
+}
+
+.cardOverlay{
+    padding:22px;
+}
+
+.card h2{
+    font-size:1.7rem;
+}
+
+.card p{
+    font-size:.95rem;
+}
+
+#soundToggle{
+    bottom:15px;
+    right:15px;
+    padding:12px 18px;
+    font-size:14px;
+}
+
+}
+
+
+/* ===========================
+   SMALL PHONES
+=========================== */
+
+@media (max-width:480px){
+
+#title{
+    font-size:2.2rem;
+    letter-spacing:2px;
+}
+
+#motto{
+    font-size:.9rem;
+}
+
+.card,
+.memories{
+    height:380px;
+}
+
+}

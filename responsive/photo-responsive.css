@@ -1,0 +1,145 @@
+/* ===========================
+   TABLET
+=========================== */
+
+@media (max-width:1024px){
+
+nav{
+    padding:20px 30px;
+}
+
+.logo{
+    font-size:24px;
+}
+
+.navLinks{
+    gap:20px;
+}
+
+.container h1{
+    font-size:3rem;
+    letter-spacing:6px;
+}
+
+.container p{
+    font-size:1.1rem;
+    margin-bottom:40px;
+}
+
+.photoGrid{
+    gap:20px;
+}
+
+.photoCard{
+    height:280px;
+}
+
+}
+
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width:768px){
+
+body{
+    overflow-x:hidden;
+}
+
+nav{
+    position:relative;
+    flex-direction:column;
+    gap:15px;
+    padding:20px;
+}
+
+.navLinks{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+}
+
+.container{
+    width:94%;
+    margin:40px auto;
+}
+
+.container h1{
+    font-size:2.2rem;
+    letter-spacing:3px;
+}
+
+.container p{
+    font-size:1rem;
+    margin-bottom:30px;
+}
+
+.photoGrid{
+    grid-template-columns:1fr;
+    gap:20px;
+}
+
+.photoCard{
+    height:240px;
+}
+
+#lightboxImage{
+    max-width:95%;
+    max-height:75%;
+}
+
+#closeBtn{
+    top:15px;
+    right:20px;
+    font-size:40px;
+}
+
+#prevBtn,
+#nextBtn{
+    width:45px;
+    height:45px;
+    font-size:22px;
+}
+
+#prevBtn{
+    left:10px;
+}
+
+#nextBtn{
+    right:10px;
+}
+
+}
+
+
+/* ===========================
+   SMALL PHONES
+=========================== */
+
+@media (max-width:480px){
+
+.container h1{
+    font-size:1.8rem;
+}
+
+.container p{
+    font-size:.95rem;
+}
+
+.photoCard{
+    height:200px;
+}
+
+#prevBtn,
+#nextBtn{
+    width:40px;
+    height:40px;
+    font-size:20px;
+}
+
+#closeBtn{
+    font-size:34px;
+}
+
+}

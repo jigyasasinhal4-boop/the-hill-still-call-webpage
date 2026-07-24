@@ -1,0 +1,149 @@
+/* ===========================
+   TABLET
+=========================== */
+
+@media (max-width:1024px){
+
+nav{
+    padding:20px 30px;
+}
+
+.logo{
+    font-size:24px;
+}
+
+.navLinks{
+    gap:20px;
+}
+
+.container h1{
+    font-size:3rem;
+    letter-spacing:6px;
+}
+
+.container p{
+    font-size:1.1rem;
+    margin-bottom:40px;
+}
+
+.videoGrid{
+    gap:20px;
+}
+
+.videoCard{
+    height:290px;
+}
+
+.videoThumbnail{
+    height:200px;
+}
+
+.videoPlayerSection{
+    width:95%;
+}
+
+}
+
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width:768px){
+
+body{
+    overflow-x:hidden;
+}
+
+nav{
+    position:relative;
+    flex-direction:column;
+    gap:15px;
+    padding:20px;
+}
+
+.navLinks{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+}
+
+.container{
+    width:94%;
+    margin:40px auto;
+}
+
+.container h1{
+    font-size:2.2rem;
+    letter-spacing:3px;
+}
+
+.container p{
+    font-size:1rem;
+    margin-bottom:30px;
+}
+
+.videoGrid{
+    grid-template-columns:1fr;
+    gap:20px;
+}
+
+.videoCard{
+    height:auto;
+}
+
+.videoThumbnail{
+    height:220px;
+}
+
+.videoInfo{
+    padding:15px;
+}
+
+.videoInfo h3{
+    font-size:1.2rem;
+}
+
+.question{
+    font-size:.95rem;
+}
+
+.videoPlayerSection{
+    width:95%;
+    margin:40px auto;
+}
+
+#mainVideo{
+    border-radius:15px;
+}
+
+}
+
+
+/* ===========================
+   SMALL PHONES
+=========================== */
+
+@media (max-width:480px){
+
+.container h1{
+    font-size:1.8rem;
+}
+
+.container p{
+    font-size:.95rem;
+}
+
+.videoThumbnail{
+    height:190px;
+}
+
+.videoInfo h3{
+    font-size:1.1rem;
+}
+
+.question{
+    font-size:.9rem;
+}
+
+}

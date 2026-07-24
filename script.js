@@ -24,7 +24,7 @@ enterBtn.addEventListener("click", () => {
 
 
     setTimeout(() => {
-        window.location.href = "memory-flash.html";
+        window.location.href = "home.html";
     }, 1000);
 
 });
