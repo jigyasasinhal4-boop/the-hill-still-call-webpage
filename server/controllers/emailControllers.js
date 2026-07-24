@@ -37,9 +37,9 @@ const productsHTML = orderedProducts.map(product => `
 </tr>
 `).join("");
 
-const fs = require("fs");
+/*const fs = require("fs");
 
-fs.writeFileSync("receipt.pdf", receiptPDF);
+fs.writeFileSync("receipt.pdf", receiptPDF);*/
 console.log("EMAIL FUNCTION WAS CALLED");
 const productList = orderedProducts.map(product => `
 <li>
@@ -106,7 +106,7 @@ ${city}, ${state} - ${pincode}
 
 <div style="text-align:center;margin-top:25px;">
 
-<a href="https://the-hill-still-call.info"
+<a href="https://the-hill-still-call.site"
 style="background:#6B3F1D;color:white;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:bold;">
 Track Your Order
 </a>
@@ -129,7 +129,7 @@ If you have any questions about your order, simply reply to this email or contac
 
 <div style="text-align:center;margin-top:20px;">
 
-<a href="https://the-hill-still-call.info"
+<a href="https://the-hill-still-call.site"
 style="background:#6B3F1D;color:white;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:bold;">
 Visit Support Centre
 </a>
