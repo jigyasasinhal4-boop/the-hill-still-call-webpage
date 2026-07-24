@@ -224,7 +224,7 @@ console.log("Update error:", error);
     return;
 
 }
-
-window.location.href = 
+alert("update finished check the console.");
+/*window.location.href = 
 "payment-success.html";
-});
+});*/
