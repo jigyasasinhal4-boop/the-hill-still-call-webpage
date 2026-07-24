@@ -28,7 +28,9 @@ app.use(limiter);
 const allowedOrigins = [
   "http://127.0.0.1:5500",
   "http://localhost:5500",
-  "https://the-hill-still-call-webpage-qdkf.vercel.app"
+  "https://the-hill-still-call-webpage-qdkf.vercel.app",
+  "https://the-hill-still-call.site",
+  "https://www.the-hill-still-call.site"
 ];
 
 app.use(cors({
